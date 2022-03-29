@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditions</title>
+</head>
+
+<body>
+
+    <script>
+
+        // Вариант 1
+
+        var UserCurrentAge = prompt('Сколько Вам лет?');
+        if (isNaN(UserCurrentAge) !== true
+            && UserCurrentAge >= 0
+            && UserCurrentAge !== null) {
+            var LastAgeCharacter = UserCurrentAge[UserCurrentAge.length - 1];
+            var PenultAgeCaracter = UserCurrentAge[UserCurrentAge.length - 2];
+
+            if (PenultAgeCaracter === '1') {
+                console.log('Вам ' + UserCurrentAge + ' лет');
+            }
+            else if (LastAgeCharacter === '1') {
+                console.log('Вам ' + UserCurrentAge + ' год');
+            }
+            else if (LastAgeCharacter >= '2' && LastAgeCharacter <= '4') {
+                console.log('Вам ' + UserCurrentAge + ' года');
+            }
+            else {
+                console.log('Вам ' + UserCurrentAge + ' лет');
+            }
+        }
+
+        else {
+            console.log('Введите правильное числовое значение!');
+        }
+
+
+        // Вариант 2
+
+        var UserCurrentAge = prompt('Сколько Вам лет?');
+        if (isNaN(UserCurrentAge) !== true
+            && UserCurrentAge >= 0
+            && UserCurrentAge !== null) {
+            UserCurrentAge = +UserCurrentAge;
+            AgeCounter100 = UserCurrentAge % 100;
+            AgeCounter10 = UserCurrentAge % 10;
+
+            if (AgeCounter100 >= 5 && AgeCounter100 <= 20) {
+                console.log('Вам ' + UserCurrentAge + ' лет');
+            }
+            else if (AgeCounter10 === 1) {
+                console.log('Вам ' + UserCurrentAge + ' год');
+            }
+            else if (AgeCounter10 >= 2 && AgeCounter10 <= 4) {
+                console.log('Вам ' + UserCurrentAge + ' года');
+            }
+            else {
+                console.log('Вам ' + UserCurrentAge + ' лет');
+            }
+        }
+
+        else {
+            console.log('Введите правильное числовое значение!');
+        }
+
+    </script>
+</body>
+
+</html>
